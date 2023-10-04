@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 
 int i, idade[10], soma = 0;
 float media = 0;
@@ -20,4 +20,4 @@ int main(void) {
   	}
 
   return 0;
-}
+}*/
