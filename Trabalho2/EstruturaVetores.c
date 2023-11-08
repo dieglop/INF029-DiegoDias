@@ -36,18 +36,17 @@ int criarEstruturaAuxiliar(int posicao, int tamanho)
 	if(posicao < 1 || posicao > 10)
     	retorno = POSICAO_INVALIDA;
 	else
-    // o tamanho ser muito grande
-	if(malloc(tamanho * sizeof(vetorAuxiliar)) == NULL)
-		retorno = SEM_ESPACO_DE_MEMORIA;
-	else
-    // o tamanho nao pode ser menor que 1
+	// o tamanho nao pode ser menor que 1
 	if(tamanho < 1) 
 		retorno = TAMANHO_INVALIDO;
-	
+	else
+    // o tamanho ser muito grande
+	if(malloc(tamanho * sizeof(int)) == NULL)
+		retorno = SEM_ESPACO_DE_MEMORIA;   
     // deu tudo certo, crie
 	else{
 		vetorPrincipal[posicao - 1] = malloc(sizeof(vetorAuxiliar));
-		vetorPrincipal[posicao - 1]->elementos = malloc(tamanho * sizeof(vetorAuxiliar));
+		vetorPrincipal[posicao - 1]->elementos = malloc(tamanho * sizeof(int));
 		vetorPrincipal[posicao - 1]->tam = tamanho;
 		vetorPrincipal[posicao - 1]->qtd = 0;
     	retorno = SUCESSO;
